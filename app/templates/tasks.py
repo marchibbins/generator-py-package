@@ -26,5 +26,9 @@ def coverage(ctx, html=False):
         ctx.run('coverage html')
 
 @task
+def lint(ctx):
+    ctx.run('flake8 --show-source --count')
+
+@task
 def test(ctx):
     ctx.run('py.test', pty=True)
