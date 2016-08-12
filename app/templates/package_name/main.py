@@ -1,6 +1,3 @@
 def hello():
-    """TODO: Docstring for hello.
-    :returns: string
-
-    """
+    """Say Hello"""
     return "Hello"
