@@ -1,9 +1,11 @@
 from invoke import task
 
+
 @task
 def clean(ctx):
     clean_pyc(ctx)
     clean_test(ctx)
+
 
 @task
 def clean_pyc(ctx):
@@ -11,11 +13,13 @@ def clean_pyc(ctx):
     for pattern in patterns:
         ctx.run('rm -rf %s' % pattern)
 
+
 @task
 def clean_test(ctx):
     patterns = ['.cache', '.coverage', 'htmlcov']
     for pattern in patterns:
         ctx.run('rm -rf %s' % pattern)
+
 
 @task
 def coverage(ctx, html=False):
@@ -25,9 +29,11 @@ def coverage(ctx, html=False):
     if html:
         ctx.run('coverage html')
 
+
 @task
 def lint(ctx):
     ctx.run('flake8 --show-source --count')
+
 
 @task
 def test(ctx):
