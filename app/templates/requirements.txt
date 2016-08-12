@@ -1,0 +1,4 @@
+bpython==0.15
+coverage==4.2
+invoke==0.13.0
+pytest==2.9.2
